@@ -29,7 +29,7 @@ export default function SimpleForm({ style, setResult }) {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://127.0.0.1:5000/refine', { style, text });
+      const res = await axios.post('https://refiner-backend.onrender.com//refine', { style, text });
       setResult(res.data.result);
 
       // 사용 횟수 업데이트

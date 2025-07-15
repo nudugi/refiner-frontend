@@ -35,7 +35,7 @@ export default function ExhibitionForm({ setResult }) {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://127.0.0.1:5000/refine', {
+      const res = await axios.post('https://refiner-backend.onrender.com//refine', {
         style: '작가노트 & 전시 서문',
         ...form,
       });
