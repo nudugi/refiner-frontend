@@ -10,8 +10,8 @@ export default function PaymentTest() {
         orderId: "order_" + new Date().getTime(),
         orderName: "27.42 Refiner 테스트 결제",
         customerName: "테스트 사용자",
-        successUrl: "https://refiner-backend.onrender.com/api/payment/success",
-        failUrl: "https://refiner-backend.onrender.com/api/payment/fail",
+        successUrl: `${process.env.REACT_APP_API_BASE}/payment/success`,
+        failUrl: `${process.env.REACT_APP_API_BASE}/payment/fail`,
       });
     } catch (err) {
       alert("결제 실패: " + err.message);
