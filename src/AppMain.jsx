@@ -3,9 +3,10 @@ import SimpleForm from './components/SimpleForm';
 import ExhibitionForm from './components/ExhibitionForm';
 import ResultBox from './components/ResultBox';
 
-export default function App() {
+export default function AppMain() {
   const [style, setStyle] = useState('essay');
   const [result, setResult] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -51,6 +52,21 @@ export default function App() {
       {result && <ResultBox result={result} style={style} />}
 
       <AboutSection />
+      <button
+        onClick={() => navigate("/payment/test")}
+        style={{
+          padding: "1rem 2rem",
+          marginTop: 30,
+          fontSize: "1rem",
+          backgroundColor: "#0064FF",
+          color: "#fff",
+          border: "none",
+          borderRadius: 8,
+          cursor: "pointer",
+        }}
+      >
+        테스트 결제하기
+      </button>
     </div>
   );
 }
