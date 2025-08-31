@@ -6,7 +6,6 @@ import ResultBox from './components/ResultBox';
 export default function AppMain() {
   const [style, setStyle] = useState('essay');
   const [result, setResult] = useState(null);
-  const navigate = useNavigate();
 
   return (
     <div
@@ -52,8 +51,10 @@ export default function AppMain() {
       {result && <ResultBox result={result} style={style} />}
 
       <AboutSection />
+
+      {/* 테스트 결제 버튼 */}
       <button
-        onClick={() => navigate("/payment/test")}
+        onClick={() => window.location.href = "/payment/test"}
         style={{
           padding: "1rem 2rem",
           marginTop: 30,
@@ -74,20 +75,20 @@ export default function AppMain() {
 function AboutSection() {
   return (
     <div
-  style={{
-    marginTop: 'auto',
-    fontSize: '0.85rem',
-    color: '#666',
-    borderTop: '1px solid #ddd',
-    paddingTop: '1.5rem',
-    lineHeight: 1.6,
-    textAlign: 'center',
-  }}
-  >
-  <p>이 도구는 예술가와 창작자를 위한 AI 글 정제기입니다.</p>
-  <p>시 / 에세이 / 일기 / 전시 서문 / 작가 노트 등을 정제해줍니다.</p>
-  <p>지속적인 사용을 원하신다면 유료 전환을 기다려주세요.</p>
-  <p style={{ marginTop: '0.5rem' }}>&#8791;&#8902; 27.42 | 초반 무료 사용 5회 제한 &#8902;&#8791;</p>
-  </div>
+      style={{
+        marginTop: 'auto',
+        fontSize: '0.85rem',
+        color: '#666',
+        borderTop: '1px solid #ddd',
+        paddingTop: '1.5rem',
+        lineHeight: 1.6,
+        textAlign: 'center',
+      }}
+    >
+      <p>이 도구는 예술가와 창작자를 위한 AI 글 정제기입니다.</p>
+      <p>시 / 에세이 / 일기 / 전시 서문 / 작가 노트 등을 정제해줍니다.</p>
+      <p>지속적인 사용을 원하신다면 유료 전환을 기다려주세요.</p>
+      <p style={{ marginTop: '0.5rem' }}>&#8791;&#8902; 27.42 | 초반 무료 사용 5회 제한 &#8902;&#8791;</p>
+    </div>
   );
 }
