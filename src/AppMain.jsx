@@ -54,7 +54,7 @@ export default function AppMain() {
 
       {/* 테스트 결제 버튼 */}
       <button
-        onClick={() => window.location.href = "/payment/test"}
+        onClick={() => window.location.href = "https://refiner-frontend.vercel.app/payment/test"}
         style={{
           padding: "1rem 2rem",
           marginTop: 30,
