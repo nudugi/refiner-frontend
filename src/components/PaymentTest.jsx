@@ -20,10 +20,10 @@ export default function PaymentTest() {
 
   return (
     <div style={{ textAlign: "center", marginTop: 100 }}>
-      <h1>테스트 결제 페이지</h1>
+      <h1>테스트 결제</h1>
       <button
         onClick={handlePayment}
-        style={{ padding: "1rem 2rem", marginTop: 20, fontSize: "1.1rem", backgroundColor: "#0064FF", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer" }}
+        style={{ padding: "1rem 2rem", fontSize: "1.1rem", backgroundColor: "#0064FF", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer" }}
       >
         테스트 결제하기
       </button>
