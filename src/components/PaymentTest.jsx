@@ -1,7 +1,12 @@
 import React from "react";
 
 export default function PaymentTest() {
-  const handlePayment = async () => {
+  const handleTestPayment = async () => {
+    if (!window.TossPayments) {
+      alert("TossPayments SDK가 로드되지 않았습니다.");
+      return;
+    }
+
     const tossPayments = window.TossPayments(process.env.REACT_APP_TOSS_CLIENT_KEY);
 
     try {
@@ -22,8 +27,16 @@ export default function PaymentTest() {
     <div style={{ textAlign: "center", marginTop: 100 }}>
       <h1>테스트 결제</h1>
       <button
-        onClick={handlePayment}
-        style={{ padding: "1rem 2rem", fontSize: "1.1rem", backgroundColor: "#0064FF", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer" }}
+        onClick={handleTestPayment}
+        style={{
+          padding: "1rem 2rem",
+          fontSize: "1.1rem",
+          backgroundColor: "#0064FF",
+          color: "#fff",
+          border: "none",
+          borderRadius: 8,
+          cursor: "pointer",
+        }}
       >
         테스트 결제하기
       </button>

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppMain from "./AppMain";
-import PaymentTest from "./components/PaymentTest";
+import PaymentTest from "./PaymentTest";
 
 export default function App() {
   return (
