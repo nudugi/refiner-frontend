@@ -6,20 +6,35 @@ import ResultBox from "./components/ResultBox";
 export default function AppMain() {
   const [style, setStyle] = useState("essay");
   const [result, setResult] = useState(null);
-  const [isTossLoaded, setIsTossLoaded] = useState(false);
+  const [tossLoaded, setTossLoaded] = useState(false);
 
-  // Toss SDK 로드 확인
+  // TossPayments SDK가 로드됐는지 체크
   useEffect(() => {
-    if (window.TossPayments) setIsTossLoaded(true);
+    const checkToss = () => {
+      if (window.TossPayments) {
+        setTossLoaded(true);
+      } else {
+        setTimeout(checkToss, 100); // 0.1초마다 재시도
+      }
+    };
+    checkToss();
   }, []);
 
   const handleTestPayment = async () => {
-    if (!isTossLoaded) {
-      alert("TossPayments SDK가 로드되지 않았습니다.");
+    if (!tossLoaded) {
+      alert("TossPayments SDK가 아직 로드되지 않았습니다.");
       return;
     }
 
-    const tossPayments = window.TossPayments(process.env.REACT_APP_TOSS_CLIENT_KEY);
+    const clientKey = process.env.REACT_APP_TOSS_CLIENT_KEY;
+    const apiBase = process.env.REACT_APP_API_BASE;
+
+    if (!clientKey || !apiBase) {
+      alert("환경변수가 설정되지 않았습니다. REACT_APP_TOSS_CLIENT_KEY와 REACT_APP_API_BASE를 확인하세요.");
+      return;
+    }
+
+    const tossPayments = window.TossPayments(clientKey);
 
     try {
       await tossPayments.requestPayment("카드", {
@@ -27,11 +42,12 @@ export default function AppMain() {
         orderId: "order_" + new Date().getTime(),
         orderName: "27.42 Refiner 테스트 결제",
         customerName: "테스트 사용자",
-        successUrl: `${process.env.REACT_APP_API_BASE}/payment/success`,
-        failUrl: `${process.env.REACT_APP_API_BASE}/payment/fail`,
+        successUrl: `${apiBase}/payment/success`,
+        failUrl: `${apiBase}/payment/fail`,
       });
     } catch (err) {
       alert("결제 실패: " + err.message);
+      console.error(err);
     }
   };
 
@@ -60,7 +76,6 @@ export default function AppMain() {
 
       <AboutSection />
 
-      {/* 테스트 결제 버튼 */}
       <button
         onClick={handleTestPayment}
         style={{ padding: "1rem 2rem", marginTop: 30, fontSize: "1rem", backgroundColor: "#0064FF", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer" }}
