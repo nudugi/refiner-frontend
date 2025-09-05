@@ -6,7 +6,6 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<AppMain />} />
-        <Route path="/payment/test" element={<PaymentTest />} />
       </Routes>
     </Router>
   );
