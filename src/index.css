@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  --color-ink: #141311;
+  --color-paper: #fbfaf7;
+  --color-accent: #a8402a;
+  --color-muted: #6b6862;
+  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, system-ui, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #fcfcfc;
-  color: #111;
-  font-family: 'Consolas', monospace;
+  background-color: #fbfaf7;
+  color: #141311;
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, system-ui, sans-serif;
   font-size: 16px;
+}
+
+a {
+  color: inherit;
 }
