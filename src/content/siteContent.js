@@ -90,7 +90,7 @@ export const footer = {
   desc: '비어있음에서 형태를 만드는 스튜디오입니다.',
   domain: '2742.store',
   business: {
-    name: '이십칠점사이',
+    name: '스튜디오 슈냐 (Studio SUNYA)',
     ceo: '황지환',
     registrationNumber: '699-27-02047',
     mailOrderNumber: '2025-강원강릉-0376',
