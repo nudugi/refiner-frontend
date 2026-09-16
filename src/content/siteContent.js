@@ -1,8 +1,9 @@
 // SUNYA 사이트 전역 카피. 문구 수정은 이 파일에서만 하면 됩니다.
 
 export const siteMeta = {
-  title: 'SUNYA',
-  description: '비어있음에서 형태를 만드는 스튜디오, SUNYA.',
+  title: 'SUNYA | 스튜디오 슈냐 (Studio SUNYA)',
+  description:
+    '스튜디오 슈냐(Studio SUNYA)는 비어있음에서 형태를 만드는 오브제 스튜디오입니다. 오브제 작업과 창작자를 위한 도구를 만듭니다.',
 };
 
 export const nav = {
@@ -20,7 +21,7 @@ export const marquee = {
 };
 
 export const hero = {
-  eyebrow: 'SUNYA STUDIO',
+  eyebrow: 'STUDIO SUNYA · 스튜디오 슈냐',
   title: ['비어있음에서', '형태를 만든다'],
   subtitle: '군더더기 없는 사물, 군더더기 없는 언어.',
   ctaPrimary: { label: 'Works 보기', to: '/works' },
