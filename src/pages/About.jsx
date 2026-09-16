@@ -29,6 +29,17 @@ export default function About() {
             </p>
           ))}
         </div>
+
+        <figure className="mt-16 max-w-md border border-bone/15 p-3 sm:p-4">
+          <img
+            src="/brand/sketch-head.jpg"
+            alt="SUNYA 드로잉 스터디"
+            className="block w-full"
+          />
+          <figcaption className="mt-4 font-mono text-xs uppercase tracking-widest text-bone/40">
+            Study — ink on paper
+          </figcaption>
+        </figure>
       </section>
 
       <SiteFooter />

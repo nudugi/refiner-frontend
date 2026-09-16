@@ -8,9 +8,14 @@ const SIZES = {
 export default function SunyaWordmark({ size = 'md', className = '' }) {
   return (
     <span
-      className={`inline-flex items-center gap-[0.18em] font-black uppercase leading-none tracking-tighter ${SIZES[size]} ${className}`}
+      className={`inline-flex items-center gap-[0.12em] font-black uppercase leading-none tracking-tighter ${SIZES[size]} ${className}`}
     >
-      <span className="inline-block aspect-square h-[0.32em] shrink-0 bg-signal" aria-hidden="true" />
+      <img
+        src="/brand/mark-signal.png"
+        alt=""
+        aria-hidden="true"
+        className="h-[0.85em] w-auto shrink-0 object-contain"
+      />
       SUNYA
     </span>
   );

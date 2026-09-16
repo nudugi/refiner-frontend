@@ -22,33 +22,42 @@ export default function Home() {
       <SiteHeader theme="dark" />
 
       {/* Hero */}
-      <section className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-16">
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-bone/50">
-          {hero.eyebrow}
-        </span>
-        <h1 className="mt-6 text-6xl font-black uppercase leading-[0.95] tracking-tighter sm:text-8xl md:text-[9rem]">
-          {hero.title.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
-        </h1>
-        <p className="mt-8 max-w-sm text-base text-bone/60 sm:text-lg">{hero.subtitle}</p>
+      <section className="relative overflow-hidden">
+        <img
+          src="/brand/mark-white.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 top-1/2 hidden h-[70vh] w-auto -translate-y-1/2 select-none opacity-[0.07] sm:block"
+        />
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Link
-            to={hero.ctaPrimary.to}
-            className="inline-flex items-center gap-2 bg-signal px-6 py-3 text-sm font-bold uppercase tracking-wide text-void no-underline transition-opacity hover:opacity-80"
-          >
-            {hero.ctaPrimary.label}
-            <span aria-hidden>→</span>
-          </Link>
-          <Link
-            to={hero.ctaSecondary.to}
-            className="inline-flex items-center gap-2 border border-bone/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-bone no-underline transition-colors hover:border-bone hover:bg-bone hover:text-void"
-          >
-            {hero.ctaSecondary.label}
-          </Link>
+        <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-16">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-bone/50">
+            {hero.eyebrow}
+          </span>
+          <h1 className="mt-6 text-6xl font-black uppercase leading-[0.95] tracking-tighter sm:text-8xl md:text-[9rem]">
+            {hero.title.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </h1>
+          <p className="mt-8 max-w-sm text-base text-bone/60 sm:text-lg">{hero.subtitle}</p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link
+              to={hero.ctaPrimary.to}
+              className="inline-flex items-center gap-2 bg-signal px-6 py-3 text-sm font-bold uppercase tracking-wide text-void no-underline transition-opacity hover:opacity-80"
+            >
+              {hero.ctaPrimary.label}
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              to={hero.ctaSecondary.to}
+              className="inline-flex items-center gap-2 border border-bone/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-bone no-underline transition-colors hover:border-bone hover:bg-bone hover:text-void"
+            >
+              {hero.ctaSecondary.label}
+            </Link>
+          </div>
         </div>
       </section>
 
