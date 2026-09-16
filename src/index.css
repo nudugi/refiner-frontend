@@ -1,24 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @theme {
   --color-ink: #141311;
   --color-paper: #fbfaf7;
   --color-accent: #a8402a;
   --color-muted: #6b6862;
+
+  --color-void: #0a0a0a;
+  --color-bone: #f2f0ea;
+  --color-signal: #ff2b1f;
+
   --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, system-ui, sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #fbfaf7;
-  color: #141311;
+  background-color: #0a0a0a;
+  color: #f2f0ea;
   font-family: 'Pretendard Variable', 'Pretendard', -apple-system, system-ui, sans-serif;
   font-size: 16px;
-}
-
-a {
-  color: inherit;
 }

@@ -5,7 +5,7 @@ import SiteFooter from '../components/SiteFooter';
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col bg-paper text-ink">
-      <SiteHeader />
+      <SiteHeader theme="light" />
       <div className="mx-auto flex max-w-5xl flex-1 flex-col items-center justify-center px-6 text-center">
         <p className="font-mono text-sm text-muted">404</p>
         <h1 className="mt-3 text-2xl font-bold tracking-tight">페이지를 찾을 수 없습니다</h1>

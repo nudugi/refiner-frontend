@@ -1,132 +1,131 @@
 import { Link } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
+import MarqueeBand from '../components/MarqueeBand';
+import PlaceholderWork from '../components/PlaceholderWork';
 import useDocumentMeta from '../hooks/useDocumentMeta';
-import { siteMeta, hero, intro, features, process, visual, finalCta } from '../content/siteContent';
-
-function SectionLabel({ children }) {
-  return (
-    <span className="block font-mono text-xs tracking-widest text-accent">{children}</span>
-  );
-}
+import {
+  siteMeta,
+  hero,
+  marquee,
+  worksTeaser,
+  aboutTeaser,
+  toolsTeaser,
+  worksPage,
+} from '../content/siteContent';
 
 export default function Home() {
   useDocumentMeta(siteMeta.title, siteMeta.description);
 
   return (
-    <div className="min-h-screen bg-paper text-ink">
-      <SiteHeader />
+    <div className="min-h-screen bg-void text-bone">
+      <SiteHeader theme="dark" />
 
       {/* Hero */}
-      <section className="mx-auto max-w-5xl px-6 pb-20 pt-20 sm:pt-28">
-        <SectionLabel>{hero.eyebrow}</SectionLabel>
-        <h1 className="mt-5 text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-6xl">
+      <section className="mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-16">
+        <span className="font-mono text-xs uppercase tracking-[0.3em] text-bone/50">
+          {hero.eyebrow}
+        </span>
+        <h1 className="mt-6 text-6xl font-black uppercase leading-[0.95] tracking-tighter sm:text-8xl md:text-[9rem]">
           {hero.title.map((line) => (
             <span key={line} className="block">
               {line}
             </span>
           ))}
         </h1>
-        <p className="mt-6 max-w-md whitespace-pre-line text-base leading-relaxed text-muted sm:text-lg">
-          {hero.subtitle}
-        </p>
-        <Link
-          to={hero.ctaPrimary.to}
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper no-underline transition-opacity hover:opacity-80"
-        >
-          {hero.ctaPrimary.label}
-          <span aria-hidden>→</span>
-        </Link>
-      </section>
+        <p className="mt-8 max-w-sm text-base text-bone/60 sm:text-lg">{hero.subtitle}</p>
 
-      <hr className="mx-auto max-w-5xl border-ink/10" />
-
-      {/* Intro */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="grid gap-8 sm:grid-cols-[120px_1fr]">
-          <SectionLabel>{intro.eyebrow}</SectionLabel>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{intro.title}</h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">{intro.body}</p>
-          </div>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
+          <Link
+            to={hero.ctaPrimary.to}
+            className="inline-flex items-center gap-2 bg-signal px-6 py-3 text-sm font-bold uppercase tracking-wide text-void no-underline transition-opacity hover:opacity-80"
+          >
+            {hero.ctaPrimary.label}
+            <span aria-hidden>→</span>
+          </Link>
+          <Link
+            to={hero.ctaSecondary.to}
+            className="inline-flex items-center gap-2 border border-bone/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-bone no-underline transition-colors hover:border-bone hover:bg-bone hover:text-void"
+          >
+            {hero.ctaSecondary.label}
+          </Link>
         </div>
       </section>
 
-      <hr className="mx-auto max-w-5xl border-ink/10" />
+      <MarqueeBand text={marquee.text} />
 
-      {/* Features */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="grid gap-8 sm:grid-cols-[120px_1fr]">
-          <SectionLabel>{features.eyebrow}</SectionLabel>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{features.title}</h2>
-            <ul className="mt-8 grid list-none gap-8 sm:grid-cols-3">
-              {features.items.map((item, i) => (
-                <li key={item.label} className="border-t border-ink/10 pt-4">
-                  <span className="font-mono text-xs text-muted">{String(i + 1).padStart(2, '0')}</span>
-                  <p className="mt-2 font-bold">{item.label}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{item.desc}</p>
-                </li>
-              ))}
-            </ul>
+      {/* Works teaser (light break) */}
+      <section className="bg-paper text-ink">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/10 pb-6">
+            <div>
+              <span className="font-mono text-xs text-accent">{worksTeaser.eyebrow}</span>
+              <h2 className="mt-2 text-3xl font-black uppercase tracking-tighter sm:text-5xl">
+                {worksTeaser.title}
+              </h2>
+            </div>
+            <Link
+              to={worksTeaser.cta.to}
+              className="text-sm font-bold uppercase tracking-wide text-ink no-underline hover:underline"
+            >
+              {worksTeaser.cta.label} →
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <hr className="mx-auto max-w-5xl border-ink/10" />
-
-      {/* Process */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="grid gap-8 sm:grid-cols-[120px_1fr]">
-          <SectionLabel>{process.eyebrow}</SectionLabel>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{process.title}</h2>
-            <ol className="mt-8 flex list-none flex-col gap-6 sm:flex-row sm:gap-4">
-              {process.steps.map((s) => (
-                <li key={s.step} className="flex-1 border-t border-ink/10 pt-4">
-                  <span className="font-mono text-xs text-accent">{s.step}</span>
-                  <p className="mt-2 font-bold">{s.title}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <hr className="mx-auto max-w-5xl border-ink/10" />
-
-      {/* Visual / mood */}
-      <section className="overflow-hidden bg-ink py-24 text-paper">
-        <div className="mx-auto max-w-5xl px-6">
-          <SectionLabel>{visual.eyebrow}</SectionLabel>
-          <p className="mt-6 whitespace-pre-line text-3xl font-bold leading-snug tracking-tight sm:text-5xl">
-            {visual.statement}
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+            {worksTeaser.desc}
           </p>
-          <div className="mt-12 flex flex-wrap gap-3">
-            {visual.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-paper/30 px-4 py-1.5 font-mono text-xs tracking-wide text-paper/80"
-              >
-                {tag}
-              </span>
+
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {worksPage.items.slice(0, 4).map((item, i) => (
+              <PlaceholderWork
+                key={item.title}
+                index={i + 1}
+                title={item.title}
+                category={item.category}
+                tone="light"
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="mx-auto max-w-5xl px-6 py-24 text-center">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">{finalCta.title}</h2>
-        <p className="mt-3 text-muted">{finalCta.subtitle}</p>
-        <Link
-          to={finalCta.cta.to}
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper no-underline transition-opacity hover:opacity-80"
-        >
-          {finalCta.cta.label}
-          <span aria-hidden>→</span>
-        </Link>
+      {/* About teaser (dark) */}
+      <section className="bg-void text-bone">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <span className="font-mono text-xs text-signal">{aboutTeaser.eyebrow}</span>
+          <h2 className="mt-2 text-3xl font-black uppercase tracking-tighter sm:text-5xl">
+            {aboutTeaser.title}
+          </h2>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-bone/60 sm:text-base">
+            {aboutTeaser.desc}
+          </p>
+          <Link
+            to={aboutTeaser.cta.to}
+            className="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-bone no-underline hover:text-signal"
+          >
+            {aboutTeaser.cta.label} →
+          </Link>
+        </div>
+      </section>
+
+      {/* Tools teaser (light break) */}
+      <section className="bg-paper text-ink">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <span className="font-mono text-xs text-accent">{toolsTeaser.eyebrow}</span>
+          <h2 className="mt-2 text-3xl font-black uppercase tracking-tighter sm:text-5xl">
+            {toolsTeaser.title}
+          </h2>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+            {toolsTeaser.desc}
+          </p>
+          <Link
+            to={toolsTeaser.cta.to}
+            className="mt-8 inline-flex items-center gap-2 bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-paper no-underline transition-opacity hover:opacity-80"
+          >
+            {toolsTeaser.cta.label}
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
       </section>
 
       <SiteFooter />

@@ -1,24 +1,23 @@
 import { Link } from 'react-router-dom';
-import { footer } from '../content/siteContent';
+import SunyaWordmark from './SunyaWordmark';
+import { footer, nav } from '../content/siteContent';
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-ink/10 bg-paper">
-      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-base font-extrabold tracking-tight text-ink">{footer.brand}</p>
-          <p className="mt-1 max-w-xs">{footer.desc}</p>
-        </div>
-        <div className="flex flex-col gap-1 sm:items-end">
-          <Link to={footer.toolLink.to} className="text-ink no-underline hover:underline">
-            {footer.toolLink.label}
-          </Link>
-          <span className="font-mono text-xs text-muted">{footer.domain}</span>
-        </div>
-      </div>
+    <footer className="bg-void text-bone">
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <SunyaWordmark size="lg" />
+        <p className="mt-6 max-w-sm text-sm leading-relaxed text-bone/60">{footer.desc}</p>
 
-      <div className="border-t border-ink/10">
-        <div className="mx-auto max-w-5xl px-6 py-4 text-xs leading-relaxed text-muted">
+        <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-bone/15 pt-8 font-mono text-xs uppercase tracking-widest">
+          {nav.menu.map((item) => (
+            <Link key={item.to} to={item.to} className="text-bone/70 no-underline hover:text-signal">
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-10 border-t border-bone/15 pt-6 text-[11px] leading-relaxed text-bone/40">
           <p>
             상호: {footer.business.name} | 대표: {footer.business.ceo} | 사업자등록번호:{' '}
             {footer.business.registrationNumber} | 통신판매업 신고번호: {footer.business.mailOrderNumber}
@@ -26,6 +25,7 @@ export default function SiteFooter() {
           <p>
             주소: {footer.business.address} | 전화: {footer.business.phone} | 이메일: {footer.business.email}
           </p>
+          <p className="mt-2 font-mono">{footer.domain}</p>
         </div>
       </div>
     </footer>

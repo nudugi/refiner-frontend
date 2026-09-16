@@ -1,37 +1,20 @@
-import { Link, useLocation } from 'react-router-dom';
-import { nav } from '../content/siteContent';
+import { Link } from 'react-router-dom';
+import SunyaWordmark from './SunyaWordmark';
+import HamburgerMenu from './HamburgerMenu';
 
-export default function SiteHeader() {
-  const { pathname } = useLocation();
-  const isTool = pathname.startsWith('/refiner');
+export default function SiteHeader({ theme = 'dark' }) {
+  const isDark = theme === 'dark';
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link
-          to="/"
-          className="text-lg font-extrabold tracking-tight text-ink no-underline"
-        >
-          {nav.brand}
+    <header
+      className={`sticky z-40 ${isDark ? 'bg-void text-bone' : 'border-b border-ink/10 bg-paper text-ink'}`}
+      style={{ top: 0 }}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <Link to="/" className="no-underline" style={{ color: 'inherit' }}>
+          <SunyaWordmark size="sm" />
         </Link>
-
-        {!isTool && (
-          <Link
-            to="/refiner"
-            className="rounded-full border border-ink px-4 py-1.5 text-sm font-semibold text-ink no-underline transition-colors hover:bg-ink hover:text-paper"
-          >
-            {nav.toolCta}
-          </Link>
-        )}
-
-        {isTool && (
-          <Link
-            to="/"
-            className="text-sm font-medium text-muted no-underline transition-colors hover:text-ink"
-          >
-            ← {nav.backToHome}
-          </Link>
-        )}
+        <HamburgerMenu />
       </div>
     </header>
   );

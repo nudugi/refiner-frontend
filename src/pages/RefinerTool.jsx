@@ -17,7 +17,7 @@ export default function RefinerTool() {
 
   return (
     <div className="flex min-h-screen flex-col bg-paper text-ink">
-      <SiteHeader />
+      <SiteHeader theme="light" />
 
       <div
         style={{

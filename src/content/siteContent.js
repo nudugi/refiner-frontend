@@ -1,76 +1,93 @@
 // SUNYA 사이트 전역 카피. 문구 수정은 이 파일에서만 하면 됩니다.
 
 export const siteMeta = {
-  title: 'SUNYA | 창작자의 기록을 정리하는 도구',
-  description:
-    '작업의 배경과 생각을 입력하면 작가노트, 전시 서문, 짧은 글로 정리해 드립니다. 창작자를 위한 기록 도구, SUNYA.',
+  title: 'SUNYA',
+  description: '비어있음에서 형태를 만드는 스튜디오, SUNYA.',
 };
 
 export const nav = {
   brand: 'SUNYA',
-  toolCta: '작가노트 만들기',
-  backToHome: 'SUNYA',
+  menu: [
+    { label: 'Home', to: '/' },
+    { label: 'Works', to: '/works' },
+    { label: 'About', to: '/about' },
+    { label: 'Tools', to: '/tools' },
+  ],
+};
+
+export const marquee = {
+  text: 'SUNYA — FORM FROM EMPTINESS — OBJECTS & LANGUAGE — SUNYA —',
 };
 
 export const hero = {
-  eyebrow: 'SUNYA · 창작자를 위한 기록',
-  title: ['작업의 언어를', '정리하는 시간'],
-  subtitle:
-    '전시를 준비하거나 작업을 설명해야 할 때, 생각은 있지만 문장이 되지 않는 순간이 있습니다.\nSUNYA는 그 사이를 정리합니다.',
-  ctaPrimary: { label: '작가노트 만들기', to: '/refiner' },
+  eyebrow: 'SUNYA STUDIO',
+  title: ['비어있음에서', '형태를 만든다'],
+  subtitle: '군더더기 없는 사물, 군더더기 없는 언어.',
+  ctaPrimary: { label: 'Works 보기', to: '/works' },
+  ctaSecondary: { label: 'Studio 소개', to: '/about' },
 };
 
-export const intro = {
+export const worksTeaser = {
   eyebrow: '01',
-  title: '기록되지 않으면, 흩어집니다',
-  body: '작품에 대해 하고 싶은 말은 많은데, 막상 글로 정리하려면 어디서부터 시작해야 할지 막막할 때가 있습니다. SUNYA는 전시 제목, 작품 설명, 작업 의도처럼 이미 가지고 있는 정보를 입력하면 그것을 작가노트와 전시 서문의 형태로 다듬어 드리는 도구입니다.',
+  title: 'WORKS',
+  desc: '아직 세상에 나오지 않은 오브제들을 준비하고 있습니다. 지금은 자리만 먼저 만들어 둡니다.',
+  cta: { label: '전체 보기', to: '/works' },
 };
 
-export const features = {
+export const worksPage = {
+  eyebrow: 'WORKS',
+  title: '준비 중인 것들',
+  desc: 'SUNYA의 오브제는 아직 공개 전입니다. 아래는 앞으로 채워질 자리입니다.',
+  items: [
+    { title: 'Object 01', category: 'Coming soon' },
+    { title: 'Object 02', category: 'Coming soon' },
+    { title: 'Object 03', category: 'Coming soon' },
+    { title: 'Object 04', category: 'Coming soon' },
+    { title: 'Object 05', category: 'Coming soon' },
+    { title: 'Object 06', category: 'Coming soon' },
+  ],
+};
+
+export const aboutTeaser = {
   eyebrow: '02',
-  title: '지금 사용할 수 있는 기능',
+  title: 'ABOUT',
+  desc: 'SUNYA는 비어있음을 뜻합니다. 아무것도 없는 상태에서, 사물이든 문장이든 하나의 형태를 만들어내는 작업을 합니다.',
+  cta: { label: 'Studio 소개', to: '/about' },
+};
+
+export const aboutPage = {
+  eyebrow: 'ABOUT',
+  title: ['비어있음(空)에서', '시작합니다'],
+  paragraphs: [
+    'SUNYA는 비어있음을 뜻하는 말에서 이름을 가져왔습니다. 아무것도 정해지지 않은 상태를, 무언가 만들어질 수 있는 가능성으로 봅니다.',
+    '오브제를 만들 때도, 글을 정리할 때도 방식은 같습니다. 손에 잡히지 않는 생각과 재료를 붙잡아, 하나의 분명한 형태로 옮기는 일입니다.',
+    '지금은 오브제 라인을 준비하는 동시에, 창작자의 글을 정리하는 작은 도구 하나를 함께 운영하고 있습니다. 앞으로 만들어질 것들도 같은 태도에서 출발합니다.',
+  ],
+};
+
+export const toolsTeaser = {
+  eyebrow: '03',
+  title: 'TOOLS',
+  desc: '형태를 만드는 여러 방법 중 하나. 지금은 글을 위한 도구 하나가 있습니다.',
+  cta: { label: '작가노트 생성기 열기', to: '/refiner' },
+};
+
+export const toolsPage = {
+  eyebrow: 'TOOLS',
+  title: 'SUNYA의 도구',
+  desc: '오브제 외에, SUNYA가 지금 운영 중인 도구입니다.',
   items: [
     {
-      label: '작가노트 & 전시 서문',
-      desc: '전시 제목, 주제, 작품 설명, 전시 의도를 입력하면 작가노트·전시 서문·작품 설명 세 가지를 한 번에 정리합니다.',
-    },
-    {
-      label: '짧은 글 다듬기',
-      desc: '시, 에세이, 일기 중 원하는 형식을 골라 이미 쓴 글을 해당 형식에 맞게 다시 씁니다.',
-    },
-    {
-      label: '결과 확인',
-      desc: '정리된 글은 화면에 그대로 표시되어, 전시 자료나 포트폴리오에 옮겨 사용할 수 있습니다.',
+      title: '작가노트 생성기',
+      desc: '전시 제목, 작품 설명, 작업 의도를 입력하면 작가노트와 전시 서문으로 정리합니다.',
+      to: '/refiner',
     },
   ],
-};
-
-export const process = {
-  eyebrow: '03',
-  title: '이용 흐름',
-  steps: [
-    { step: '01', title: '형식을 고릅니다', desc: '시 / 에세이 / 일기 / 작가노트 & 전시 서문 중 하나를 선택합니다.' },
-    { step: '02', title: '내용을 입력합니다', desc: '가지고 있는 글이나 작품 정보, 작업 의도를 입력합니다.' },
-    { step: '03', title: '결과를 받습니다', desc: '입력한 내용을 바탕으로 정리된 글을 확인합니다.' },
-  ],
-};
-
-export const visual = {
-  eyebrow: '04',
-  statement: '“쓰다 만 생각도,\n기록이 될 수 있습니다.”',
-  tags: ['시', '에세이', '일기', '작가노트', '전시 서문', '작품 설명'],
-};
-
-export const finalCta = {
-  title: '지금, 정리해 볼까요',
-  subtitle: '입력은 몇 줄이면 충분합니다.',
-  cta: { label: '작가노트 만들기', to: '/refiner' },
 };
 
 export const footer = {
   brand: 'SUNYA',
-  desc: '창작자의 생각과 작업을 언어로 정리하는 기록 도구입니다.',
-  toolLink: { label: '작가노트 생성기', to: '/refiner' },
+  desc: '비어있음에서 형태를 만드는 스튜디오입니다.',
   domain: '2742.store',
   business: {
     name: '이십칠점사이',
@@ -85,7 +102,7 @@ export const footer = {
 
 export const toolPage = {
   title: '작가노트 생성기',
-  subtitle: 'SUNYA의 첫 번째 도구입니다.',
+  subtitle: 'SUNYA의 도구 중 하나입니다.',
   freeUsesNote: (max) => `무료 사용 ${max}회 제공 · 이후 유료 전환 예정`,
   aboutLines: [
     '이 도구는 예술가와 창작자를 위한 AI 글 정제기입니다.',
