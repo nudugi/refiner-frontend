@@ -72,6 +72,15 @@ export const footer = {
   desc: '창작자의 생각과 작업을 언어로 정리하는 기록 도구입니다.',
   toolLink: { label: '작가노트 생성기', to: '/refiner' },
   domain: '2742.store',
+  business: {
+    name: '이십칠점사이',
+    ceo: '황지환',
+    registrationNumber: '699-27-02047',
+    mailOrderNumber: '2025-강원강릉-0376',
+    address: '강원 강릉시 구정면 정등로 24-32',
+    phone: '010-5576-1951',
+    email: 'thekeaon0509@naver.com',
+  },
 };
 
 export const toolPage = {

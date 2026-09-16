@@ -16,6 +16,18 @@ export default function SiteFooter() {
           <span className="font-mono text-xs text-muted">{footer.domain}</span>
         </div>
       </div>
+
+      <div className="border-t border-ink/10">
+        <div className="mx-auto max-w-5xl px-6 py-4 text-xs leading-relaxed text-muted">
+          <p>
+            상호: {footer.business.name} | 대표: {footer.business.ceo} | 사업자등록번호:{' '}
+            {footer.business.registrationNumber} | 통신판매업 신고번호: {footer.business.mailOrderNumber}
+          </p>
+          <p>
+            주소: {footer.business.address} | 전화: {footer.business.phone} | 이메일: {footer.business.email}
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }
