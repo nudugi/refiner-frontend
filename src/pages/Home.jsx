@@ -36,7 +36,7 @@ function HeroVisual({ canShow3D }) {
       <Suspense fallback={null}>
         <div
           className={`col-start-1 row-start-1 h-full w-full transition-opacity duration-700 ${
-            ready ? 'opacity-45' : 'opacity-0'
+            ready ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <TurtleShellsLogo className="h-full w-full" onReady={() => setReady(true)} />
