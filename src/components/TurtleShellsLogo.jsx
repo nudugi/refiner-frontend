@@ -62,20 +62,31 @@ function Scene() {
           scale={mesh.scale}
           rotation={mesh.rotation}
         >
-          <meshStandardMaterial color="#ff2b1f" roughness={0.4} metalness={0.1} />
+          <meshStandardMaterial
+            color="#ff2b1f"
+            emissive="#4a0a05"
+            emissiveIntensity={0.5}
+            roughness={0.32}
+            metalness={0.15}
+          />
         </mesh>
       ))}
     </group>
   );
 }
 
-export default function TurtleShellsLogo({ className = '' }) {
+export default function TurtleShellsLogo({ className = '', onReady }) {
   return (
     <div className={className}>
-      <Canvas camera={{ fov: 30 }} dpr={[1, 1.5]}>
-        <ambientLight intensity={0.7} />
-        <directionalLight position={[3, 5, 2]} intensity={1.6} />
-        <directionalLight position={[-3, -1, -2]} intensity={0.35} />
+      <Canvas
+        camera={{ fov: 30 }}
+        dpr={[1, 2]}
+        gl={{ antialias: true }}
+        onCreated={() => onReady?.()}
+      >
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[3, 5, 2]} intensity={2} />
+        <directionalLight position={[-3, -1, -2]} intensity={0.5} />
         <Scene />
       </Canvas>
     </div>

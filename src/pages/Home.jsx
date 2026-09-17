@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
@@ -18,6 +18,34 @@ import {
 
 const TurtleShellsLogo = lazy(() => import('../components/TurtleShellsLogo'));
 
+function HeroVisual({ canShow3D }) {
+  const [ready, setReady] = useState(false);
+
+  if (!canShow3D) return null;
+
+  return (
+    <div className="pointer-events-none absolute -right-16 top-1/2 grid h-[65vh] w-[55%] -translate-y-1/2 select-none">
+      <img
+        src="/brand/mark-white.png"
+        alt=""
+        aria-hidden="true"
+        className={`col-start-1 row-start-1 ml-auto h-[65vh] w-auto transition-opacity duration-700 ${
+          ready ? 'opacity-0' : 'opacity-[0.07]'
+        }`}
+      />
+      <Suspense fallback={null}>
+        <div
+          className={`col-start-1 row-start-1 h-full w-full transition-opacity duration-700 ${
+            ready ? 'opacity-45' : 'opacity-0'
+          }`}
+        >
+          <TurtleShellsLogo className="h-full w-full" onReady={() => setReady(true)} />
+        </div>
+      </Suspense>
+    </div>
+  );
+}
+
 export default function Home() {
   useDocumentMeta(siteMeta.title, siteMeta.description);
   const canShow3D = useMediaQuery('(min-width: 640px)');
@@ -28,22 +56,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -right-16 top-1/2 h-[65vh] w-[55%] -translate-y-1/2 select-none opacity-90">
-          {canShow3D ? (
-            <Suspense
-              fallback={
-                <img
-                  src="/brand/mark-white.png"
-                  alt=""
-                  aria-hidden="true"
-                  className="ml-auto h-[65vh] w-auto opacity-[0.07]"
-                />
-              }
-            >
-              <TurtleShellsLogo className="h-full w-full opacity-20" />
-            </Suspense>
-          ) : null}
-        </div>
+        <HeroVisual canShow3D={canShow3D} />
 
         <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-16">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-bone/50">
