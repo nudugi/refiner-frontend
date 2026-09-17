@@ -59,8 +59,10 @@ function Scene() {
           ref={(el) => (refs.current[i] = el)}
           geometry={mesh.geometry}
           position={mesh.position}
+          scale={mesh.scale}
+          rotation={mesh.rotation}
         >
-          <meshStandardMaterial color="#181818" roughness={0.55} metalness={0.08} />
+          <meshStandardMaterial color="#ff2b1f" roughness={0.4} metalness={0.1} />
         </mesh>
       ))}
     </group>
