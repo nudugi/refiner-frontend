@@ -1,9 +1,11 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import MarqueeBand from '../components/MarqueeBand';
 import PlaceholderWork from '../components/PlaceholderWork';
 import useDocumentMeta from '../hooks/useDocumentMeta';
+import useMediaQuery from '../hooks/useMediaQuery';
 import {
   siteMeta,
   hero,
@@ -14,8 +16,11 @@ import {
   worksPage,
 } from '../content/siteContent';
 
+const TurtleShellsLogo = lazy(() => import('../components/TurtleShellsLogo'));
+
 export default function Home() {
   useDocumentMeta(siteMeta.title, siteMeta.description);
+  const canShow3D = useMediaQuery('(min-width: 640px)');
 
   return (
     <div className="min-h-screen bg-void text-bone">
@@ -23,12 +28,22 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <img
-          src="/brand/mark-white.png"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 top-1/2 hidden h-[70vh] w-auto -translate-y-1/2 select-none opacity-[0.07] sm:block"
-        />
+        <div className="pointer-events-none absolute -right-16 top-1/2 h-[65vh] w-[55%] -translate-y-1/2 select-none opacity-90">
+          {canShow3D ? (
+            <Suspense
+              fallback={
+                <img
+                  src="/brand/mark-white.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="ml-auto h-[65vh] w-auto opacity-[0.07]"
+                />
+              }
+            >
+              <TurtleShellsLogo className="h-full w-full opacity-20" />
+            </Suspense>
+          ) : null}
+        </div>
 
         <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-6 py-16">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-bone/50">
