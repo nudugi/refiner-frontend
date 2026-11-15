@@ -1,0 +1,5 @@
+# slug를 바꿨을 때 예전 주소가 새 주소로 이어지도록 여기에 적어 둡니다.
+# 한 번 공개한 주소(QR로 인쇄된 주소 포함)는 절대 지우지 마세요.
+redirects:
+  # - from: /exhibitions/2027-01-breath
+  #   to: /exhibitions/2027-01-breathing-room

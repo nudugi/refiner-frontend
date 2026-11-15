@@ -1,0 +1,10 @@
+# 샘플 작가. 실제 데이터를 넣을 때 지워도 됩니다.
+name: 김하늘
+nameEn: Kim Haneul
+bio: 접히고 기울어진 면으로 조각을 만든다. 움직이지 않는 것이 어떻게 숨 쉬는지 본다.
+mediums:
+  - 조소
+  - 키네틱
+links:
+  instagram: https://instagram.com/
+  website: https://example.com

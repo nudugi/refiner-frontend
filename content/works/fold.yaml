@@ -1,0 +1,12 @@
+# 샘플 작품. 실제 데이터를 넣을 때 지워도 됩니다.
+title: 겹
+titleEn: Fold
+artist: kim-haneul
+year: 2025
+materials: 종이, 석고
+dimensions: 48 × 30 × 62 cm
+images:
+  - src: 01.jpg
+    caption: 정면
+  - src: 02.jpg
+    caption: 측면

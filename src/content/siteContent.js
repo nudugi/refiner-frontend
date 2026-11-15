@@ -10,7 +10,8 @@ export const nav = {
   brand: 'SUNYA',
   menu: [
     { label: 'Home', to: '/' },
-    { label: 'Works', to: '/works' },
+    { label: 'Archive', to: '/exhibitions' },
+    { label: 'Objects', to: '/objects' },
     { label: 'About', to: '/about' },
     { label: 'Tools', to: '/tools' },
   ],
@@ -24,19 +25,28 @@ export const hero = {
   eyebrow: 'STUDIO SUNYA · 스튜디오 슈냐',
   title: ['비어있음에서', '형태를 만든다'],
   subtitle: '군더더기 없는 사물, 군더더기 없는 언어.',
-  ctaPrimary: { label: 'Works 보기', to: '/works' },
+  ctaPrimary: { label: 'Objects 보기', to: '/objects' },
   ctaSecondary: { label: 'Studio 소개', to: '/about' },
 };
 
-export const worksTeaser = {
+// SUNYA 아카이브(비상업 전시 기록) 홈 섹션
+export const archiveTeaser = {
   eyebrow: '01',
-  title: 'WORKS',
+  title: 'ARCHIVE',
+  desc: '졸전, 과제전, 작업실 오픈, 하루짜리 팝업까지. 끝나도 사라지지 않는 작은 전시의 기록.',
+  cta: { label: '전시 기록 전체', to: '/exhibitions' },
+};
+
+// 스튜디오 오리지널 오브제(판매 영역)
+export const worksTeaser = {
+  eyebrow: '02',
+  title: 'OBJECTS',
   desc: '아직 세상에 나오지 않은 오브제들을 준비하고 있습니다. 지금은 자리만 먼저 만들어 둡니다.',
-  cta: { label: '전체 보기', to: '/works' },
+  cta: { label: '전체 보기', to: '/objects' },
 };
 
 export const worksPage = {
-  eyebrow: 'WORKS',
+  eyebrow: 'OBJECTS',
   title: '준비 중인 것들',
   desc: 'SUNYA의 오브제는 아직 공개 전입니다. 아래는 앞으로 채워질 자리입니다.',
   items: [
@@ -50,7 +60,7 @@ export const worksPage = {
 };
 
 export const aboutTeaser = {
-  eyebrow: '02',
+  eyebrow: '03',
   title: 'ABOUT',
   desc: 'SUNYA는 비어있음을 뜻합니다. 아무것도 없는 상태에서, 사물이든 문장이든 하나의 형태를 만들어내는 작업을 합니다.',
   cta: { label: 'Studio 소개', to: '/about' },
@@ -67,10 +77,21 @@ export const aboutPage = {
 };
 
 export const toolsTeaser = {
-  eyebrow: '03',
+  eyebrow: '04',
   title: 'TOOLS',
   desc: '형태를 만드는 여러 방법 중 하나. 지금은 글을 위한 도구 하나가 있습니다.',
   cta: { label: '작가노트 생성기 열기', to: '/refiner' },
+};
+
+export const aboutArchive = {
+  eyebrow: 'SUNYA ARCHIVE',
+  title: '끝나도 사라지지 않는 전시',
+  paragraphs: [
+    'SUNYA 아카이브는 졸업전, 과제전, 작업실 오픈, 카페 전시, 하루짜리 팝업처럼 끝나면 흔적 없이 사라지는 작은 전시까지 기록하는 비상업 온라인 전시 아카이브입니다.',
+    '전시마다 바뀌지 않는 주소를 드립니다. 전시가 끝나도 그 주소로 다시 찾아올 수 있고, QR로 바로 열리며, 지원서나 기사에 그대로 인용할 수 있습니다. 조소나 키네틱처럼 입체 작품은 돌려볼 수 있게 기록합니다.',
+    '아카이브의 전시·작가·작품 페이지에는 가격, 구매 버튼, 광고를 두지 않습니다.',
+  ],
+  cta: { label: '전시 기록 보기', to: '/exhibitions' },
 };
 
 export const toolsPage = {

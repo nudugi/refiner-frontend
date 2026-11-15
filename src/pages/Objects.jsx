@@ -4,8 +4,8 @@ import PlaceholderWork from '../components/PlaceholderWork';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { worksPage } from '../content/siteContent';
 
-export default function Works() {
-  useDocumentMeta(`Works | SUNYA`, worksPage.desc);
+export default function Objects() {
+  useDocumentMeta(`Objects | SUNYA`, worksPage.desc);
 
   return (
     <div className="min-h-screen bg-void text-bone">

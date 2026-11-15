@@ -34,3 +34,35 @@ body {
   font-family: 'Pretendard Variable', 'Pretendard', -apple-system, system-ui, sans-serif;
   font-size: 16px;
 }
+
+/* SUNYA 아카이브: 전시 서문(Markdown) 본문 */
+.sunya-prose {
+  max-width: 40rem;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+.sunya-prose > * + * {
+  margin-top: 1.1em;
+}
+.sunya-prose h2,
+.sunya-prose h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 2em;
+}
+.sunya-prose a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgb(20 19 17 / 0.3);
+}
+.sunya-prose blockquote {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1em;
+  color: var(--color-muted);
+}
+.sunya-prose ul,
+.sunya-prose ol {
+  padding-left: 1.25em;
+  list-style: revert;
+}

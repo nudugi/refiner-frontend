@@ -4,12 +4,15 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import MarqueeBand from '../components/MarqueeBand';
 import PlaceholderWork from '../components/PlaceholderWork';
+import ExhibitionCard from '../archive/components/ExhibitionCard';
+import { exhibitions } from '../archive/data';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import useMediaQuery from '../hooks/useMediaQuery';
 import {
   siteMeta,
   hero,
   marquee,
+  archiveTeaser,
   worksTeaser,
   aboutTeaser,
   toolsTeaser,
@@ -91,8 +94,39 @@ export default function Home() {
 
       <MarqueeBand text={marquee.text} />
 
-      {/* Works teaser (light break) */}
-      <section className="bg-paper text-ink">
+      {/* Archive: 최근 기록된 전시 (진행 중·예정 표시) */}
+      {exhibitions.length > 0 && (
+        <section className="bg-paper text-ink">
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/10 pb-6">
+              <div>
+                <span className="font-mono text-xs text-accent">{archiveTeaser.eyebrow}</span>
+                <h2 className="mt-2 text-3xl font-black uppercase tracking-tighter sm:text-5xl">
+                  {archiveTeaser.title}
+                </h2>
+              </div>
+              <Link
+                to={archiveTeaser.cta.to}
+                className="text-sm font-bold uppercase tracking-wide text-ink no-underline hover:underline"
+              >
+                {archiveTeaser.cta.label} →
+              </Link>
+            </div>
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+              {archiveTeaser.desc}
+            </p>
+
+            <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {exhibitions.slice(0, 3).map((ex) => (
+                <ExhibitionCard key={ex.slug} exhibition={ex} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Objects teaser (light break) — 스튜디오 오리지널 오브제 */}
+      <section className="border-t border-ink/10 bg-paper text-ink">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/10 pb-6">
             <div>

@@ -1,0 +1,10 @@
+# 샘플 작품(턴테이블). 실제 데이터를 넣을 때 지워도 됩니다.
+title: 느린 회전
+titleEn: Slow Turn
+artist: kim-haneul
+year: 2026
+materials: 합판, 아크릴 도료, 모터
+dimensions: 32 × 20 × 156 cm
+# 24~36장 이미지가 든 폴더. public/archive/works/slow-turn/turntable/
+turntable: turntable
+description: 한 바퀴를 도는 데 4분이 걸리는 기둥. 한 면만 붉게 칠해, 그 면이 돌아올 때까지 기다리게 한다.

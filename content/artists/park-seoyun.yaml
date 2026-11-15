@@ -1,0 +1,9 @@
+# 샘플 작가. 실제 데이터를 넣을 때 지워도 됩니다.
+name: 박서윤
+nameEn: Park Seoyun
+bio: 방 안으로 들어오는 빛의 모양을 그린다. 오래 앉아 있던 자리에서 출발하는 회화.
+mediums:
+  - 회화
+  - 설치
+links:
+  instagram: https://instagram.com/

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SUNYA 아카이브 생성물 (빌드 때 자동 생성)
+public/_gen
