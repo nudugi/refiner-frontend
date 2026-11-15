@@ -27,7 +27,7 @@ npm run dev -- --host
 4. 입체 작품은 24~36장 사진을 `public/archive/works/<slug>/turntable/`에 `01.jpg, 02.jpg…` 순서로 넣고 작품 파일에 `turntable: turntable`을 적습니다.
 5. `npm run check:content`로 확인합니다. 오류가 있으면 어느 파일의 어느 항목인지 알려줍니다.
 
-OG 이미지, 인스타 스토리 카드(1080×1920), QR(SVG), sitemap, 구조화 데이터는 빌드할 때 자동으로 만들어집니다. 샘플 데이터(빈방 작업실, 김하늘, 박서윤, 숨 쉬는 방)는 실제 전시를 넣을 때 `content/`와 `public/archive/`에서 지우면 됩니다.
+OG 이미지, 인스타 스토리 카드(1080×1920), QR(SVG), sitemap, 구조화 데이터는 빌드할 때 자동으로 만들어집니다. 화면을 시험해 볼 샘플 데이터는 `samples/`에 따로 있습니다(배포되지 않음). 켜는 방법은 [samples/README.md](samples/README.md).
 
 ## 배포 (무료)
 

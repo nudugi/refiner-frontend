@@ -12,6 +12,7 @@ export default function ArtistsIndex() {
     <ArchiveShell>
       <IndexHeader title="작가" />
       <div className="mx-auto max-w-6xl px-6">
+        {list.length === 0 && <p className="mt-16 text-sm text-muted">아직 기록된 작가가 없습니다.</p>}
         <ul className="mt-6 list-none p-0">
           {list.map((a) => (
             <li key={a.slug} className="border-b border-ink/10">

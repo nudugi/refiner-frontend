@@ -42,7 +42,11 @@ export default function ExhibitionsIndex() {
           </div>
         )}
 
-        {byYear.length === 0 && <p className="mt-16 text-sm text-muted">해당하는 전시가 없습니다.</p>}
+        {byYear.length === 0 && (
+          <p className="mt-16 text-sm text-muted">
+            {exhibitions.length === 0 ? '아직 기록된 전시가 없습니다. 곧 첫 기록이 올라옵니다.' : '해당하는 전시가 없습니다.'}
+          </p>
+        )}
 
         {byYear.map(({ year, items }, gi) => (
           <section key={year} className="mt-12 grid gap-6 border-t border-ink pt-4 lg:grid-cols-12">

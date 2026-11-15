@@ -1,9 +1,9 @@
 // 샘플 데이터용 임시 이미지를 만든다. 실제 전시를 넣을 때 샘플과 함께 지워도 된다.
-// 실행: node scripts/sample/make-sample-images.mjs
+// 실행: node samples/make-sample-images.mjs
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { PUBLIC_DIR } from '../lib/config.mjs';
+import { PUBLIC_DIR } from '../scripts/lib/config.mjs';
 
 const out = (rel) => {
   const full = path.join(PUBLIC_DIR, 'archive', rel);
